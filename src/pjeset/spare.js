@@ -1,0 +1,3 @@
+<span className='sign'> <Link onClick={auth.doSignOut} key={4} to={inOut ? '/signout' : '/signin'}>{inOut ? 'Sign Out' : 'Sign In'}</Link></span>
+
+<Link className='sign2' style={{width:'300px', textDecoration: 'none', fontSize: '1.3em', lineHeight: '60px', border: 'none', paddingLeft: '200px', textAlign:'right'}} onClick={auth.doSignOut} key={4} to={inOut ? '/signout' : '/signin'}>{inOut ? 'Sign Out' : 'Sign In'}</Link>

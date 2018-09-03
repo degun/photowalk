@@ -1,0 +1,67 @@
+.eventImage{
+	flex: 0 0 auto;
+	height: 100%;
+	width: 300px;
+	margin-left: 30px;
+	cursor: pointer;
+}
+
+.eventImage img{
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+.desc{
+	padding: 20px;
+	margin-left: 30px;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-content: flex-start;
+	overflow: hidden;
+}
+
+.desc .place{
+	height: 5%;
+	margin: 0;
+	vertical-align: bottom;
+	font-size: 1.2em;
+}
+
+.desc .date{
+	height: 5%;
+}
+
+.desc .bio{
+	height: 70%;
+	width: 50%;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 20px 0 0 0;
+	margin-top: 30px;
+	overflow: auto;
+}
+
+
+@media (max-width: 1080px) {
+	
+	.piramida{
+		display: none;
+	}
+
+}
+
+@media (max-width: 960px) {
+	.text{
+		top: 5%;
+		left: 10%;
+		width: 60vmax;
+		overflow: visible;
+	}
+
+	h1{
+		font-size: 1em;
+	}
+	
+
+}

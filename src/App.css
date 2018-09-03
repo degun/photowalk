@@ -1,0 +1,10 @@
+body, html{
+	overflow-y: hidden;
+}
+
+::selection {
+  background: #ffb700; 
+}
+::-moz-selection {
+  background: #ffb700;
+}

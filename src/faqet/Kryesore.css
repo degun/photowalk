@@ -1,0 +1,49 @@
+
+
+.text{
+	position: absolute;
+	top: 10%;
+	left: 20%;
+	width: 40%;
+}
+
+h1{
+	width: 100%;
+	font-size: 1em;
+	font-family: Arial, sans-serif;
+	font-weight: 900;
+	text-align: left;
+}
+
+p{
+	position: absolute;
+	width: 60%;
+	font-size: 1em;
+	font-family: Monospace, monospace;
+	font-weight: 200;
+	text-align: justify;
+}
+
+
+@media (max-width: 1080px) {
+	
+	.piramida{
+		display: none;
+	}
+
+}
+
+@media (max-width: 960px) {
+	.text{
+		top: 5%;
+		left: 10%;
+		width: 60vmax;
+		overflow: visible;
+	}
+
+	h1{
+		font-size: 1em;
+	}
+	
+
+}

@@ -1,0 +1,19 @@
+
+
+.container{
+	position: relative;
+	width: 70%;
+	background-color: #eee;
+	height: calc(100vh - 200px);
+	margin: 0 auto;
+	overflow: hidden;
+	border-right: 1px solid #eee;
+	border-left: 1px solid #eee;
+	animation: 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) come forwards;
+}
+
+@media (max-width: 960px) {
+	.container {
+		width: 100%;
+	}
+}
