@@ -55,9 +55,9 @@ class Event extends Component {
 				<div className="template">
 					<span><Link style={{textDecoration: 'none'}} to={'/events'}><div className="back emerge">back to Events</div></Link></span>
 					<span><h1 className="title emerge">{this.state.name}</h1></span>
-					<div ref={this.main} className="main">
+					<div ref={this.main} className="main event">
 						<div className='eventImage'>
-						<img src={this.state.src} alt="event picture" />
+						<img src={this.state.src} alt={'the event at ' + this.state.place} />
 						</div>
 						<div className='desc'>
 						<div className="placedate">
