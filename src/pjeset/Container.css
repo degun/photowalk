@@ -3,7 +3,7 @@
 .container{
 	position: relative;
 	width: 70%;
-	background-color: #eee;
+	background-color: white;
 	height: calc(100vh - 200px);
 	margin: 0 auto;
 	overflow: hidden;

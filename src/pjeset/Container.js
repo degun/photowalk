@@ -10,7 +10,7 @@ class Container extends Component{
 			<div className="container" onMouseMove={this.props.mousemove}>
 				{this.props.children}
 			</div>
-		)
+		);
 	}
 
 }
