@@ -56,7 +56,7 @@ class Photographer extends Component {
 					<span><h1 className="title emerge">{this.state.name}</h1></span>
 					<div ref={this.main} className="main">
 						<div className='eventImage'>
-						<img src={this.state.src} alt="event picture" />
+						<img src={this.state.src} alt={'the photographer at ' + this.state.name} />
 						</div>
 						<div className='desc'>
 						<div className="placedate">
