@@ -51,7 +51,7 @@ class Photographer extends Component {
 		return (
 			<Container h='70'>
 				<div className="template">
-					<span><Link style={{textDecoration: 'none'}} to={'/photographers'}><div className="back emerge">back to photographers</div></Link></span>
+					<span><Link style={{textDecoration: 'none'}} to={'/photographers'}><div className="back leftemerge2">back to photographers</div></Link></span>
 					<span><h1 className="title emerge">{this.state.name}</h1></span>
 					<div ref={this.main} className="main event">
 						<div className='eventImage'>
