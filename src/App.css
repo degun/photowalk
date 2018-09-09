@@ -1,5 +1,6 @@
 body, html{
-	overflow-y: hidden;
+  overflow-y: hidden;
+  background-color: #e5e5e5;
 }
 
 ::selection {

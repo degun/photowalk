@@ -47,6 +47,7 @@ class Photos extends Component{
                 back ='back to Albums'
                 title={this.state.emri}
                 things={this.state.things}
+                details={false}
             >
             </Template>
         );

@@ -47,6 +47,7 @@ class Photographers extends Component{
                 back =''
                 title='Photographers'
                 things={this.state.things}
+                details={true}
             >
             </Template>
         );

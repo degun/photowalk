@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Horizontal from 'react-scroll-horizontal';
 import Container from './Container.js';
+import Item from './Item.js';
 
 import { Link } from 'react-router-dom';
 import './Template.css';
@@ -11,8 +12,11 @@ class Template extends Component {
 		this.main = React.createRef();
 		this.state = {
 			sw: 0,
-			width: 0
+			width: 0,
+			hovered: false
 		};
+		this.mouseEntered = this.mouseEntered.bind(this);
+		this.mouseLeft = this.mouseLeft.bind(this);
 	}
 
 	reloadComponent() {
@@ -20,6 +24,14 @@ class Template extends Component {
 			let w = this.main.current.offsetWidth;
 			this.setState({ width: w });
 		}
+	}
+
+	mouseEntered(){
+		this.setState({hovered: true});
+	}
+
+	mouseLeft(){
+		this.setState({hovered: false});
 	}
 
 	componentDidMount() {
@@ -36,6 +48,7 @@ class Template extends Component {
 				sw: s
 			});
 		}
+	
 	}
 
 	componentWillUnmount() {
@@ -47,20 +60,24 @@ class Template extends Component {
 		let backTo = '';
 		if(this.props.back){backTo = this.props.back.split(' ')[2].toLowerCase();	
 	}
-		const listThings = things.map((thing, index) =>
-			<div className="item" key={index}>
-				<span><h4 className="name leftemerge">{thing.name}</h4></span>
-				<div className="placedate">
-					<span><h6 className="place leftemerge2">{thing.place}</h6></span><span><em><h6 className="date rightemerge">{thing.date}</h6></em></span>
-				</div>
-				<Link to={!this.props.back ? ('/'+this.props.title.toLowerCase()+'/:'+ thing.id) : '#'}><img title="scroll for more" src={thing.src} alt="album first" /></Link>
-			</div>
+		const listThings = things.map((thing, index) => 
+			<Item 
+				src={thing.src} 
+				name={thing.name} 
+				date={thing.date} 
+				place={thing.place} 
+				index={index} 
+				id={thing.id} 
+				back={this.props.back} 
+				title={this.props.title}
+				details={this.props.details}
+			/>
 		);
 		if ((this.state.width >= this.state.sw) || (this.state.width < 720)) {
 			return (
 				<Container h='70' mousemove={this.updateXY}>
 					<div className="template">
-						<span><Link style={{textDecoration: 'none'}} to={'/'+ backTo}><div className="back emerge">{this.props.back}</div></Link></span>
+						<span><Link style={{textDecoration: 'none'}} to={'/'+ backTo}><div className="back leftemerge2">{this.props.back}</div></Link></span>
 						<span><h1 className="title emerge">{this.props.title}</h1></span>
 						<div ref={this.main} className="main">
 							{listThings}
@@ -72,7 +89,7 @@ class Template extends Component {
 			return (
 				<Container h='70' mousemove={this.updateXY}>
 					<div className="template">
-					<span><Link style={{textDecoration: 'none'}} to={'/'+ backTo}><div className="back emerge">{this.props.back}</div></Link></span>
+					<span><Link style={{textDecoration: 'none'}} to={'/'+ backTo}><div className="back leftemerge2">{this.props.back}</div></Link></span>
 						<span><h1 className="title emerge">{this.props.title}</h1></span>
 						<div ref={this.main} className="main">
 							<Horizontal reverseScroll={true}>

@@ -42,6 +42,7 @@ class Events extends Component{
 			<Template
 				title='Events'
 				things={this.state.things}
+				details={true}
 			>
 			</Template>
 		);

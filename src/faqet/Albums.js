@@ -46,6 +46,7 @@ class Albums extends Component{
                 back =''
                 title='Albums'
                 things={this.state.things}
+                details={true}
             >
             </Template>
         );

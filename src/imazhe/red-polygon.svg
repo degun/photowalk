@@ -30,7 +30,7 @@
 <defs>
     <style>
       .cls-1 {
-        fill: #ff564e;
+        fill: #333;
         fill-rule: evenodd;
         filter: url(#filter);
       }

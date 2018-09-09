@@ -18,25 +18,10 @@
 
 @keyframes leftemerge2 {
   0% {
-  	transform: translateX(-100px);
+  	transform: translateX(-200px);
   }
   50%{
-  	transform: translateX(-100px);
-  }
-  100% {
-  	transform: translateX(0);
-  }
-}
-
-@keyframes leftemerge3 {
-  0% {
-  	transform: translateX(-100px);
-  }
-  50%{
-  	transform: translateX(-100px);
-  }
-   75%{
-  	transform: translateX(-100px);
+  	transform: translateX(-200px);
   }
   100% {
   	transform: translateX(0);
@@ -53,6 +38,26 @@
   100% {
   	transform: translateX(0);
   }
+}
+
+.emerge{
+	animation: 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) emerge forwards;
+}
+
+.leftemerge{
+	animation: 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) leftemerge forwards;
+}
+
+.leftemerge2{
+	animation: 1.3s cubic-bezier(0.785, 0.135, 0.15, 0.86) leftemerge2 forwards;
+}
+
+.leftemerge3{
+	animation: 1.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) leftemerge3 forwards;
+}
+
+.rightemerge{
+	animation: 1.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) rightemerge forwards;
 }
 
 
@@ -77,6 +82,8 @@
 }
 
 span{
+	left: 15%;
+	position: relative;
 	overflow: hidden;
 	display: inline-block;
 }
@@ -84,41 +91,17 @@ span{
 .title{
 	height: 15%;
 	width: 100%;
-	font-size: 5em;
+	font-size: 3em;
 	margin: 5px 0 30px 30px;
 	text-align: left;
 }
 
-.placedate{
-	display: flex;
-	justify-content: space-between;
-	flex-direction: row;
-}
-
-.emerge{
-	animation: 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) emerge forwards;
-}
-
-.leftemerge{
-	animation: 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) leftemerge forwards;
-}
-
-.leftemerge2{
-	animation: 1.3s cubic-bezier(0.785, 0.135, 0.15, 0.86) leftemerge2 forwards;
-}
-
-.leftemerge3{
-	animation: 1.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) leftemerge3 forwards;
-}
-
-.rightemerge{
-	animation: 1.6s cubic-bezier(0.785, 0.135, 0.15, 0.86) rightemerge forwards;
-}
-
 .main{
-	height: 80%;
+	height: 70vw;
+	max-height: 400px;
 	width: 100%;
 	display: flex;
+	background-color: #9fb7a7;
 	flex-direction: row;
 	justify-content: flex-start;
     flex-wrap: nowrap;
@@ -133,30 +116,69 @@ span{
 
 .item{
 	flex: 0 0 auto;
+	display: inline-block;
+	box-sizing:border-box;
+	top: 0;
 	height: 100%;
-	width: 300px;
-	margin-left:30px;
+	padding: 35px 0;
+	width: auto;
 	cursor: pointer;
+	overflow: hidden;
 }
 
-.name{
-	height: 5%;
+.item:hover{
+	background-color: #aba;
+}
+
+.description{
+	display: inline-block;
+	box-sizing: border-box;
+	height: 80px;
+	position: relative;
 	width: 100%;
-	font-size: 0.9em;
-	margin: 5px;
+	bottom: -100px;
+	padding: 10px;
+	background-color:rgba(255, 255, 255, 0.9);
+	transition: 100ms bottom ease-in;
+}
+
+.photolink{
+	display: inline-block;
+	box-sizing: border-box;
+	height: 100%;
+}
+
+.item a img{
+	display: block;
+	box-sizing: border-box;
+	width: auto;
+	height: 100%;
+	padding: 0 30px;
+	object-fit: cover;
+	border-left: 1px solid #839f8e;
+	filter: saturate(0.7);
+}
+.name{
+	height: 15%;
+	width: 100%;
+	font-size: 1em;
+	margin: 10px;
 	text-align: left;
 }
+
+.placedate{
+	left: 15%;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+}
+
 .place{
-	height: 5%;
+	height: 10%;
 	width: 100%;
 	font-size: 0.8em;
-	margin: 0 0 5px 5px;
+	margin: 0 0 10px 10px;
 	text-align: left;
-}
-.item img{
-	height: 70%;
-	width: 100%;
-	object-fit: cover;
 }
 
 .date{
@@ -168,16 +190,18 @@ span{
 	text-align: left;
 }
 
-a:visited{
-	color: black;
-}
-
 @media (max-width:1000px){
 	.title{
 		font-size: 4em;
 	}
+	/* span{
+		left: 0;	
+	} */
 	.item img{
 		height: 75%;
+	}
+	.description{
+		border-right: 1px solid #bbb;
 	}
 }
 
@@ -185,7 +209,9 @@ a:visited{
 	.title{
 		font-size: 2em;
 	}
+	
 	.item img{
 		height: 85%;
 	}
+
 }

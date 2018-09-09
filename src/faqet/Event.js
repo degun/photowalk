@@ -57,7 +57,8 @@ class Event extends Component {
 					<span><h1 className="title emerge">{this.state.name}</h1></span>
 					<div ref={this.main} className="main event">
 						<div className='eventImage'>
-						<img src={this.state.src} alt={'the event at ' + this.state.place} />
+							<img src={this.state.src} alt={'the event at ' + this.state.place} />
+							<h5>Social details and links:</h5>
 						</div>
 						<div className='desc'>
 						<div className="placedate">
