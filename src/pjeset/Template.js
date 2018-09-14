@@ -66,7 +66,7 @@ class Template extends Component {
 				name={thing.name} 
 				date={thing.date} 
 				place={thing.place} 
-				index={index} 
+				key={index} 
 				id={thing.id} 
 				back={this.props.back} 
 				title={this.props.title}

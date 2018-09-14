@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Horizontal from 'react-scroll-horizontal';
-import Container from './Container.js';
 import { Link } from 'react-router-dom';
 
 class Item extends Component {
@@ -12,6 +10,7 @@ class Item extends Component {
 		};
 		this.mouseEntered = this.mouseEntered.bind(this);
 		this.mouseLeft = this.mouseLeft.bind(this);
+		this.goFullscreen = this.goFullscreen.bind(this);
 	}
 
 	isMobileDevice() {
@@ -37,14 +36,23 @@ class Item extends Component {
 		}, 150);
 	}
 
+	goFullscreen(event){
+		var elem = event.target;
+		if (elem.requestFullscreen) {
+			elem.requestFullscreen();
+			console.log('went fullscreen');
+		}
+		console.log('no fullscreen');
+	}
+
 	componentDidMount(){
 		this.setState({hovered: false, display: 'block'});
 	}
 	
 	render() {
 		return (
-		<div onMouseEnter={this.mouseEntered} onMouseLeave={this.mouseLeft} className="item" key={this.props.index}>
-			<Link className="photolink" to={!this.props.back ? ('/'+this.props.title.toLowerCase()+'/:'+ this.props.id) : '#'}><img src={this.props.src} alt="album first" /></Link>
+		<div onMouseEnter={this.mouseEntered} onMouseLeave={this.mouseLeft} className="item" >
+			<Link className="photolink" to={!this.props.back ? ('/'+this.props.title.toLowerCase()+'/:'+ this.props.id) : '#'}><img allowFullScreen={true} src={this.props.src} alt={this.props.name} onClick={this.goFullscreen}/></Link>
 			<div style={{display: this.props.details ? this.state.display : 'none', bottom: (this.isMobileDevice() || this.state.hovered) ? '49px' : '-100px'}}className="description">
 				<h4 className="name">{this.props.name}</h4>
 				<div className="placedate">

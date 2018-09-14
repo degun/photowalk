@@ -192,11 +192,12 @@ span{
 
 @media (max-width:1000px){
 	.title{
+		height: 8%;
 		font-size: 4em;
 	}
-	/* span{
+	span{
 		left: 0;	
-	} */
+	}
 	.item img{
 		height: 75%;
 	}
@@ -207,6 +208,7 @@ span{
 
 @media (max-width:800px){
 	.title{
+		height: 8%;
 		font-size: 2em;
 	}
 	

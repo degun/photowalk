@@ -48,7 +48,7 @@ textarea:focus{
 }
 
 .btn{
-	width: 70%;
+	width: 50%;
 	height: 8%;
 	display: flex;
 	flex-direction: row;
@@ -79,4 +79,25 @@ button:hover{
 .signup:hover{
 	color: black;
 	text-decoration: underline;
+}
+
+@media (max-width:1000px){
+	form{
+		margin-left: 0;	
+	}
+	input, textarea, button{
+		width: 100%;
+		margin: 0 0 15px 30px;
+	}
+	textarea{
+		height: 20%;
+	}
+	.btn{
+		margin-top: 10px;
+		width: 100%;
+	}
+	button{
+		width: 60%;
+		margin-left: 30%;
+	}
 }
