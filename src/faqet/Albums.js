@@ -23,10 +23,12 @@ class Albums extends Component{
         ref.on('value', function(snapshot) {
             let albums, things = [], imazhe, ph;
             albums = snapshot.val().environments.production.content.albums['en-US'];
+            console.log(albums);
             imazhe = snapshot.val().media.files;
             for (let key in albums){
-                if(imazhe[albums[key].photos[0]]){
-                    ph = 'https://firebasestorage.googleapis.com/v0/b/photowalk-tirana.appspot.com/o/flamelink%2Fmedia%2F' +  imazhe[albums[key].photos[0]].file + '?alt=media';
+                let imzh = imazhe[albums[key].imageDeck[0].image[0]];
+                if(imzh){
+                    ph = 'https://firebasestorage.googleapis.com/v0/b/photowalk-tirana.appspot.com/o/flamelink%2Fmedia%2F' +  imzh.file + '?alt=media';
                 }else{
                     ph = '';
                 }

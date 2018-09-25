@@ -5,8 +5,6 @@ import logo from '../imazhe/logo.png';
 import menu from './menu.svg';
 import close from './close.png';
 import './Menu.css';
-
-
 class Menu extends Component{
 	constructor(props){
 		super(props);

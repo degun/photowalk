@@ -23,13 +23,14 @@ class Photos extends Component{
         // Attach an asynchronous callback to read the data at our posts reference
         ref.on('value', function(snapshot) {
             let album, things = [], imazhe, emri, ph;
-            album = snapshot.val().environments.production.content.albums['en-US'][id].photos;
+            album = snapshot.val().environments.production.content.albums['en-US'][id].imageDeck;
+            console.log(album);
             emri = snapshot.val().environments.production.content.albums['en-US'][id].name;
             that.setState({emri: emri});
             imazhe = snapshot.val().media.files;
             for(let i=0; i<album.length; i++){
-                if(imazhe[album[i]]){
-                    ph = 'https://firebasestorage.googleapis.com/v0/b/photowalk-tirana.appspot.com/o/flamelink%2Fmedia%2F' +  imazhe[album[i]].file + '?alt=media';
+                if(imazhe[album[i].image]){
+                    ph = 'https://firebasestorage.googleapis.com/v0/b/photowalk-tirana.appspot.com/o/flamelink%2Fmedia%2F' +  imazhe[album[i].image].file + '?alt=media';
                 }else{
                     ph = '';
                 }
