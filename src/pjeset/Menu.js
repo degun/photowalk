@@ -9,14 +9,21 @@ class Menu extends Component{
 	constructor(props){
 		super(props);
 		this.state = {
-			menuopen: false
+			menuopen: false,
+			currentMenu: window.location.href.split('/')[3]
 		};
 		this.toggleMenu = this.toggleMenu.bind(this);
+		this.currentMenu = this.currentMenu.bind(this);
 	}
 
     toggleMenu() {
         const currentState = this.state.menuopen;
         this.setState({ menuopen: !currentState });
+	}
+
+	currentMenu(event) {
+		let menuTani = event.target.getAttribute('href').slice(1);
+		this.setState({currentMenu: menuTani});
 	}
 	
 	render(){
@@ -25,7 +32,7 @@ class Menu extends Component{
 		const menus = this.props.menus;
 
 		const menuWeb = menus.map((menu, index) => 
-			<Link key={index} to={'/' + menu}>{menu.charAt(0).toUpperCase() + menu.slice(1)}</Link>
+			<Link style={menu === this.state.currentMenu ? {color: 'red'} : {}} onClick={this.currentMenu} key={index} to={'/' + menu}>{menu.charAt(0).toUpperCase() + menu.slice(1)}</Link>
 		);
 
 		const menuMobile = menus.map((menu, index) => 
@@ -39,7 +46,7 @@ class Menu extends Component{
 						
 					</div>
 					<nav className="menuweb">
-						<Link to="/" className="logoInside">
+						<Link to="/" onClick={this.currentMenu} className="logoInside">
 							<img src={logo} className="logo" alt="logo" />
 						</Link>
 						{menuWeb}

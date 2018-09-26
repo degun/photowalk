@@ -10,13 +10,19 @@ import Photographer from './faqet/Photographer.js';
 import Events from './faqet/Events.js';
 import Event from './faqet/Event.js';
 import Contact from './faqet/Contact.js';
+import firebase from 'firebase/app';
 import './App.css';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      db: ''
+    }
+  }
 
   render() {
-    let menus = ['albums', 'events', 'photographers', 'contact'];
-   
+  let menus = ['albums', 'events', 'photographers', 'contact'];
     return (
       <div className='App'>
         <Menu menus={menus}/>

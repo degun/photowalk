@@ -22,8 +22,9 @@ class Photos extends Component{
         let id = this.props.match.params.id.slice(1);
         // Attach an asynchronous callback to read the data at our posts reference
         ref.on('value', function(snapshot) {
-            let album, things = [], imazhe, emri, ph;
+            let album, things = [], imazhe, emri, ph, photographer, phID;
             album = snapshot.val().environments.production.content.albums['en-US'][id].imageDeck;
+            photographer = snapshot.val().environments.production.content.photographer['en-US'];
             emri = snapshot.val().environments.production.content.albums['en-US'][id].name;
             that.setState({emri: emri});
             imazhe = snapshot.val().media.files;
@@ -33,9 +34,16 @@ class Photos extends Component{
                 }else{
                     ph = '';
                 }
-                things.push({src: ph});
+                for(let key in photographer){
+                    if(photographer[key].name === album[i].photographer){
+                        phID = key;
+                    }
+                }
+                things.push({src: ph, name: album[i].photographer, id: phID});
             }
+            
             that.setState({things: things});
+            console.log(things);
         }, function (errorObject) {
             console.log('The read failed: ' + errorObject.code);
         });
@@ -47,7 +55,7 @@ class Photos extends Component{
                 back ='back to Albums'
                 title={this.state.emri}
                 things={this.state.things}
-                details={false}
+                details={true}
             >
             </Template>
         );

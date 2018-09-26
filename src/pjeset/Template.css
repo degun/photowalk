@@ -142,6 +142,10 @@ span{
 	transition: 100ms bottom ease-in;
 }
 
+.description a{
+	text-decoration: none;
+}
+
 .photolink{
 	display: inline-block;
 	box-sizing: border-box;
@@ -177,7 +181,7 @@ span{
 	height: 10%;
 	width: 100%;
 	font-size: 0.8em;
-	margin: 0 0 10px 10px;
+	margin: 10px;
 	text-align: left;
 }
 
@@ -186,7 +190,7 @@ span{
 	width: 100%;
 	color: #333;
 	font-size: 0.8em;
-	margin: 5px;
+	margin: 10px;
 	text-align: left;
 }
 

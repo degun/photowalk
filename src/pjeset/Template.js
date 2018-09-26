@@ -71,6 +71,7 @@ class Template extends Component {
 				back={this.props.back} 
 				title={this.props.title}
 				details={this.props.details}
+				tiled={false}
 			/>
 		);
 		if ((this.state.width >= this.state.sw) || (this.state.width < 720)) {

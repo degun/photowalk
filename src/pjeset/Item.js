@@ -54,7 +54,7 @@ class Item extends Component {
 		<div onMouseEnter={this.mouseEntered} onMouseLeave={this.mouseLeft} className="item" >
 			<Link className="photolink" to={!this.props.back ? ('/'+this.props.title.toLowerCase()+'/:'+ this.props.id) : '#'}><img allowFullScreen src={this.props.src} alt={this.props.name} onClick={this.goFullscreen}/></Link>
 			<div style={{display: this.props.details ? this.state.display : 'none', bottom: (this.isMobileDevice() || this.state.hovered) ? '49px' : '-100px'}}className="description">
-				<h4 className="name">{this.props.name}</h4>
+				<Link to={(this.props.tiled) ? "" : (this.props.id ? "/photographers/:" + this.props.id : "")}><h4 className="name">{this.props.name + ' ↗'}</h4></Link>
 				<div className="placedate">
 					<h6 className="place">{this.props.place}</h6><em><h6 className="date">{this.props.date}</h6></em>
 				</div>

@@ -41,7 +41,6 @@ class Albums extends Component{
     }
     
     render(){
-        
         return(
             <Tiles
                 back =''
