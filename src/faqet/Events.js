@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import sizeMe from 'react-sizeme';
-import Template from '../pjeset/Template.js';
+import Tiles from '../pjeset/Tiles.js';
 import firebase from 'firebase/app';
 
 const db = firebase.database();
@@ -39,12 +39,12 @@ class Events extends Component{
     
 	render(){
 		return(
-			<Template
+			<Tiles
 				title='Events'
 				things={this.state.things}
 				details={true}
 			>
-			</Template>
+			</Tiles>
 		);
 
 	}

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Component } from 'react';
 import sizeMe from 'react-sizeme';
-import Template from '../pjeset/Template.js';
+import Tiles from '../pjeset/Tiles.js';
 import firebase from 'firebase/app';
-import { auth } from '../firebase';
+import  '../firebase';
 
 const db = firebase.database();
 const ref = db.ref('flamelink');
@@ -23,7 +23,6 @@ class Albums extends Component{
         ref.on('value', function(snapshot) {
             let albums, things = [], imazhe, ph;
             albums = snapshot.val().environments.production.content.albums['en-US'];
-            console.log(albums);
             imazhe = snapshot.val().media.files;
             for (let key in albums){
                 let imzh = imazhe[albums[key].imageDeck[0].image[0]];
@@ -44,13 +43,13 @@ class Albums extends Component{
     render(){
         
         return(
-            <Template
+            <Tiles
                 back =''
                 title='Albums'
                 things={this.state.things}
                 details={true}
             >
-            </Template>
+            </Tiles>
         );
 
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 import sizeMe from 'react-sizeme';
-import Template from '../pjeset/Template.js';
+import Tiles from '../pjeset/Tiles.js';
 import firebase from 'firebase/app';
 
 const db = firebase.database();
@@ -33,7 +33,6 @@ class Photographers extends Component{
                 
                 things.push({name: photographers[key].name, place: photographers[key].place, date: rate, src: ph, id: photographers[key].id});
             }
-            console.log(things);
             that.setState({things: things});
         }, function (errorObject) {
             console.log('The read failed: ' + errorObject.code);
@@ -43,13 +42,13 @@ class Photographers extends Component{
     render(){
         
         return(
-            <Template
+            <Tiles
                 back =''
                 title='Photographers'
                 things={this.state.things}
                 details={true}
             >
-            </Template>
+            </Tiles>
         );
 
     }

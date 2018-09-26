@@ -24,7 +24,6 @@ class Photos extends Component{
         ref.on('value', function(snapshot) {
             let album, things = [], imazhe, emri, ph;
             album = snapshot.val().environments.production.content.albums['en-US'][id].imageDeck;
-            console.log(album);
             emri = snapshot.val().environments.production.content.albums['en-US'][id].name;
             that.setState({emri: emri});
             imazhe = snapshot.val().media.files;

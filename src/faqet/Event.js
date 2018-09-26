@@ -28,7 +28,6 @@ class Event extends Component {
         ref.on('value', function(snapshot) {
             let event, imazhe, ph;
 			event = snapshot.val().environments.production.content.events['en-US'][id];
-			console.log(event);
             imazhe = snapshot.val().media.files;
 			if(imazhe[event.photo[0]]){
 				ph = 'https://firebasestorage.googleapis.com/v0/b/photowalk-tirana.appspot.com/o/flamelink%2Fmedia%2F' +  imazhe[event.photo[0]].file + '?alt=media';

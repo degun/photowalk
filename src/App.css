@@ -1,5 +1,5 @@
 body, html{
-  overflow-y: hidden;
+  overflow-y: auto;
   background-color: #e5e5e5;
 }
 

@@ -3,6 +3,12 @@ header{
 	display: flex;
 	justify-content: space-between;
 	height: 100px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 3;
+	background-color: #e5e5e5;
 }
 
 .logoContainer, .menuIconContainer, .closeIconContainer{
@@ -65,7 +71,7 @@ header{
 	height: 0vh;
 	width: 1000vw;
 	z-index: 3;
-	background-color: #e5e5e5;
+	background-color: #333;
 	transition: height .7s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 
@@ -87,7 +93,7 @@ header{
 
 .mobileitem{
 	text-decoration: none;
-	color: #333;
+	color: #e5e5e5;
 	font-size: 2em;
 	line-height: 2em;
 	text-align: left;
@@ -164,5 +170,20 @@ header{
 @media (max-width: 960px) {
 	.menuweb{
 		visibility: hidden;
+	}
+}
+
+@media (max-width: 800px) {
+	header{
+		height: 60px;
+	}
+	.logo{
+		width: 40px;
+		height: 40px;
+	}
+	.closeIconContainer{
+		position: absolute;
+		top: 0;
+		right: 7px;
 	}
 }

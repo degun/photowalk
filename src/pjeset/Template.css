@@ -1,9 +1,9 @@
 @keyframes emerge {
   0% {
-  	transform: translateY(100px);
+	  transform: translateY(100px) skew(-20deg);
   }
   100% {
-  	transform: translateY(0);
+	  transform: translateY(0) skew(0);
   }
 }
 
@@ -195,9 +195,6 @@ span{
 		height: 8%;
 		font-size: 4em;
 	}
-	span{
-		left: 0;	
-	}
 	.item img{
 		height: 75%;
 	}
@@ -207,9 +204,16 @@ span{
 }
 
 @media (max-width:800px){
+	.tiles span{
+		left: 5%;
+	}
+	.template span{
+		left: 0;
+	}
 	.title{
 		height: 8%;
 		font-size: 2em;
+		margin-left: 30px;
 	}
 	
 	.item img{
@@ -217,3 +221,4 @@ span{
 	}
 
 }
+

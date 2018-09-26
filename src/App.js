@@ -10,33 +10,16 @@ import Photographer from './faqet/Photographer.js';
 import Events from './faqet/Events.js';
 import Event from './faqet/Event.js';
 import Contact from './faqet/Contact.js';
-import SignInPage from './faqet/Signin.js';
-import SignUpPage from './faqet/Signup.js';
-import { firebase } from './firebase';
 import './App.css';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      authUser: null,
-    };
-  }
-  componentDidMount() {
-    firebase.auth.onAuthStateChanged(authUser => {
-      authUser
-        ? this.setState({ authUser })
-        : this.setState({ authUser: null });
-    });
-  }
 
   render() {
     let menus = ['albums', 'events', 'photographers', 'contact'];
    
     return (
       <div className='App'>
-        <Menu menus={menus} in={this.state.authUser}/>
+        <Menu menus={menus}/>
         <Switch>
           <Route exact path="/" component={Kryesore} />
           <Route exact path="/albums" component={Albums} />
@@ -46,9 +29,6 @@ class App extends Component {
           <Route exact path="/events" component={Events} />
           <Route exact path="/events/:id" component={Event} />
           <Route exact path="/contact" component={Contact} />
-          <Route exact path="/signin" component={SignInPage} />
-          <Route exact path="/signup" component={SignUpPage} />
-          <Route exact path="/signout" component={Kryesore}/>
         </Switch>
         <Footer />
       </div>
