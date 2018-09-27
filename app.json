@@ -1,0 +1,33 @@
+{
+  "name": "photowalk",
+  "scripts": {
+  },
+  "env": {
+    "CONTRASTSECURITY_API_KEY": {
+      "required": true
+    },
+    "CONTRASTSECURITY_SERVICE_KEY": {
+      "required": true
+    },
+    "CONTRASTSECURITY_UID": {
+      "required": true
+    },
+    "CONTRASTSECURITY_URL": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    "contrastsecurity",
+    "pointdns"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
