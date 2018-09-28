@@ -14,8 +14,11 @@
 
 .main.event{
 	padding-left: 15%;
+	height: auto;
+	min-height: calc(70vh - 200px);
 	position: relative;
 	overflow: hidden;
+	background-color: #e5e5e5;
 }
 
 .eventImage img{

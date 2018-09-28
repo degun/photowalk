@@ -43,7 +43,6 @@ class Photos extends Component{
             }
             
             that.setState({things: things});
-            console.log(things);
         }, function (errorObject) {
             console.log('The read failed: ' + errorObject.code);
         });

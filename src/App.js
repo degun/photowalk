@@ -10,7 +10,6 @@ import Photographer from './faqet/Photographer.js';
 import Events from './faqet/Events.js';
 import Event from './faqet/Event.js';
 import Contact from './faqet/Contact.js';
-import firebase from 'firebase/app';
 import './App.css';
 
 class App extends Component {

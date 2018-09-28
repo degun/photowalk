@@ -114,6 +114,21 @@ span{
     display: none; 
 }
 
+.icon{
+	height: 100%;
+	width: 5%;
+	position: absolute;
+	align-self: center;
+}
+
+.icon_left{
+	left: 5px;
+}
+
+.icon_right{
+	right: 5px;
+}
+
 .item{
 	flex: 0 0 auto;
 	display: inline-block;

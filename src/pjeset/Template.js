@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import Horizontal from 'react-scroll-horizontal';
+import { withBaseIcon } from 'react-icons-kit';
+import {ic_chevron_left} from 'react-icons-kit/md/ic_chevron_left';
+import {ic_chevron_right} from 'react-icons-kit/md/ic_chevron_right';
 import Container from './Container.js';
 import Item from './Item.js';
-
 import { Link } from 'react-router-dom';
 import './Template.css';
+
+const ArrowIconContainer = 
+    withBaseIcon({ size: 64, style: {color: '#E5E5E5'}})
 
 class Template extends Component {
 	constructor(props) {
@@ -81,7 +86,9 @@ class Template extends Component {
 						<span><Link style={{textDecoration: 'none'}} to={'/'+ backTo}><div className="back leftemerge2">{this.props.back}</div></Link></span>
 						<span><h1 className="title emerge">{this.props.title}</h1></span>
 						<div ref={this.main} className="main">
-							{listThings}
+							<div className="icon icon_left"><ArrowIconContainer icon={ic_chevron_left}/></div>
+								{listThings}
+							<div className="icon icon_right"><ArrowIconContainer icon={ic_chevron_right}/></div>
 						</div>
 					</div>
 				</Container>
@@ -94,7 +101,9 @@ class Template extends Component {
 						<span><h1 className="title emerge">{this.props.title}</h1></span>
 						<div ref={this.main} className="main">
 							<Horizontal reverseScroll={true}>
+							<div className="icon icon_left"><ArrowIconContainer icon={ic_chevron_left}/></div>
 								{listThings}
+							<div className="icon icon_right"><ArrowIconContainer icon={ic_chevron_right}/></div>
 							</Horizontal>
 						</div>
 					</div>

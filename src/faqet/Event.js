@@ -50,7 +50,7 @@ class Event extends Component {
 	
 	render() {
 		return (
-			<Container h='70'>
+			<Container>
 				<div className="template">
 					<span><Link style={{textDecoration: 'none'}} to={'/events'}><div className="back leftemerge2">back to Events</div></Link></span>
 					<span><h1 className="title emerge">{this.state.name}</h1></span>
