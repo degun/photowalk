@@ -43,7 +43,7 @@ class Kryesore extends Component{
 
 		return(
 			<Container h='100' mousemove={this.updateXY}>
-				<ImazhMove class="piramida" src={piramida} bottom = {pbcalc} left={-moveX}  height='50%' width="100%" />
+				<ImazhMove class="piramida" src={piramida} bottom = {pbcalc} left={-moveX +'px'}  height='50%' width="100%" />
 				<ImazhMove class="girl" src={girl} bottom = {gbcalc} right={grcalc}  height='70%' width="20%" />
 				<div className="text">
 					<h1 style={h1style}>PHOTOWALK TIRANA</h1>

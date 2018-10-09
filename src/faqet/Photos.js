@@ -1,7 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 import sizeMe from 'react-sizeme';
-import Template from '../pjeset/Template.js';
+import Reel from '../pjeset/Reel.js';
 import firebase from 'firebase/app';
 
 const db = firebase.database();
@@ -50,13 +50,13 @@ class Photos extends Component{
     
     render(){
         return(
-            <Template
+            <Reel
                 back ='back to Albums'
                 title={this.state.emri}
                 things={this.state.things}
                 details={true}
             >
-            </Template>
+            </Reel>
         );
 
     }
